@@ -26,6 +26,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          VITE_CRICAPI_KEY: ${{ secrets.VITE_CRICAPI_KEY }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
