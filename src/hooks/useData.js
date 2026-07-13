@@ -1,8 +1,10 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useEffect } from 'react';
+import { cricketAPI, isAPIConfigured } from '../services/api';
 import { players } from '../data/players';
 import { teams } from '../data/teams';
 import { tournaments } from '../data/tournaments';
-import { liveMatches, upcomingMatches, recentResults } from '../data/matches';
+import { liveMatches, upcomingMatches, recentResults, scorecard } from '../data/matches';
 import { news } from '../data/news';
 import { venues, rankings, records } from '../data/venues';
 
@@ -55,15 +57,103 @@ export function useTournament(id) {
 }
 
 export function useLiveMatches() {
-  return useQuery({ queryKey: ['liveMatches'], queryFn: async () => simulateDelay(liveMatches) });
+  const queryClient = useQueryClient();
+
+  const query = useQuery({
+    queryKey: ['liveMatches'],
+    queryFn: async () => {
+      if (isAPIConfigured()) {
+        try {
+          const allMatches = await cricketAPI.getCurrentMatches();
+          if (allMatches && allMatches.length > 0) {
+            return allMatches.filter((m) => m.isLive);
+          }
+        } catch (err) {
+          console.warn('CricAPI live matches failed, using mock data:', err.message);
+        }
+      }
+      return simulateDelay(liveMatches);
+    },
+    refetchInterval: isAPIConfigured() ? 30000 : false,
+    staleTime: isAPIConfigured() ? 20000 : 5 * 60 * 1000,
+  });
+
+  return query;
 }
 
 export function useUpcomingMatches() {
-  return useQuery({ queryKey: ['upcomingMatches'], queryFn: async () => simulateDelay(upcomingMatches) });
+  return useQuery({
+    queryKey: ['upcomingMatches'],
+    queryFn: async () => {
+      if (isAPIConfigured()) {
+        try {
+          const allMatches = await cricketAPI.getCurrentMatches();
+          if (allMatches && allMatches.length > 0) {
+            const upcoming = allMatches.filter((m) => !m.isLive && !m.result);
+            if (upcoming.length > 0) return upcoming;
+          }
+        } catch (err) {
+          console.warn('CricAPI upcoming failed, using mock data:', err.message);
+        }
+      }
+      return simulateDelay(upcomingMatches);
+    },
+  });
 }
 
 export function useRecentResults() {
-  return useQuery({ queryKey: ['recentResults'], queryFn: async () => simulateDelay(recentResults) });
+  return useQuery({
+    queryKey: ['recentResults'],
+    queryFn: async () => {
+      if (isAPIConfigured()) {
+        try {
+          const allMatches = await cricketAPI.getCurrentMatches();
+          if (allMatches && allMatches.length > 0) {
+            const results = allMatches.filter((m) => m.result);
+            if (results.length > 0) return results;
+          }
+        } catch (err) {
+          console.warn('CricAPI results failed, using mock data:', err.message);
+        }
+      }
+      return simulateDelay(recentResults);
+    },
+  });
+}
+
+export function useAllMatches() {
+  return useQuery({
+    queryKey: ['allMatches'],
+    queryFn: async () => {
+      if (isAPIConfigured()) {
+        try {
+          const allMatches = await cricketAPI.getCurrentMatches();
+          if (allMatches && allMatches.length > 0) return allMatches;
+        } catch (err) {
+          console.warn('CricAPI all matches failed, using mock data:', err.message);
+        }
+      }
+      return simulateDelay([...liveMatches, ...upcomingMatches, ...recentResults]);
+    },
+  });
+}
+
+export function useMatchScorecard(matchId) {
+  return useQuery({
+    queryKey: ['scorecard', matchId],
+    queryFn: async () => {
+      if (isAPIConfigured()) {
+        try {
+          const data = await cricketAPI.getMatchScorecard(matchId);
+          if (data) return data;
+        } catch (err) {
+          console.warn('CricAPI scorecard failed, using mock data:', err.message);
+        }
+      }
+      return simulateDelay(scorecard);
+    },
+    enabled: !!matchId,
+  });
 }
 
 export function useNews(filters = {}) {
