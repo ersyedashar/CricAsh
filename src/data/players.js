@@ -4,7 +4,7 @@ export const players = [
     age: 35, dob: '1988-11-05', birthPlace: 'Delhi, India', height: "5'9\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Medium', jerseyNumber: 18,
     team: 'India', formerTeams: ['Royal Challengers Bangalore'],
-    photo: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Virat_Kohli_during_the_India_vs_Aus_4th_Test_match_at_Narendra_Modi_Stadium_on_09_March_2023.jpg',
     ranking: { test: 13, odi: 2, t20: 8 },
     stats: {
       test: { matches: 113, runs: 8848, avg: 49.15, sr: 57.23, hundreds: 29, fifties: 28, highest: 254, wickets: 0, economy: 0, bestBowling: '-' },
@@ -30,7 +30,7 @@ export const players = [
     age: 29, dob: '1994-10-15', birthPlace: 'Lahore, Pakistan', height: "5'11\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 56,
     team: 'Pakistan', formerTeams: ['Karachi Kings', 'Gloucestershire'],
-    photo: 'https://images.unsplash.com/photo-1589801258723-34e5e95c6e8a?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Babar_azam_2023.jpg',
     ranking: { test: 6, odi: 1, t20: 3 },
     stats: {
       test: { matches: 52, runs: 3997, avg: 42.52, sr: 54.21, hundreds: 9, fifties: 21, highest: 196, wickets: 0, economy: 0, bestBowling: '-' },
@@ -54,7 +54,7 @@ export const players = [
     age: 34, dob: '1989-06-02', birthPlace: 'Sydney, Australia', height: "6'0\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Leg Break', jerseyNumber: 49,
     team: 'Australia', formerTeams: ['Rajasthan Royals', 'Sydney Sixers'],
-    photo: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Steve_Smith_Cricketer.jpg',
     ranking: { test: 3, odi: 15, t20: 45 },
     stats: {
       test: { matches: 100, runs: 9240, avg: 58.61, sr: 54.63, hundreds: 32, fifties: 37, highest: 239, wickets: 17, economy: 3.43, bestBowling: '3/41' },
@@ -79,7 +79,7 @@ export const players = [
     age: 30, dob: '1993-12-06', birthPlace: 'Ahmedabad, India', height: "6'2\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Fast', jerseyNumber: 93,
     team: 'India', formerTeams: ['Mumbai Indians'],
-    photo: 'https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg',
     ranking: { test: 2, odi: 5, t20: 1 },
     stats: {
       test: { matches: 36, runs: 78, avg: 5.57, sr: 32.50, hundreds: 0, fifties: 0, highest: 14, wickets: 159, avg: 19.42, economy: 2.69, bestBowling: '6/27' },
@@ -103,7 +103,7 @@ export const players = [
     age: 33, dob: '1990-12-30', birthPlace: 'Sheffield, England', height: "5'11\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 66,
     team: 'England', formerTeams: ['Yorkshire', 'Barbados Royals'],
-    photo: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/2_05_Root_hundred.jpg',
     ranking: { test: 1, odi: 8, t20: 90 },
     stats: {
       test: { matches: 145, runs: 11940, avg: 50.38, sr: 56.89, hundreds: 31, fifties: 56, highest: 254, wickets: 61, economy: 3.22, bestBowling: '4/5' },
@@ -127,7 +127,7 @@ export const players = [
     age: 33, dob: '1990-08-08', birthPlace: 'Tauranga, New Zealand', height: "5'8\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 22,
     team: 'New Zealand', formerTeams: ['Sunrisers Hyderabad', 'Gujarat Titans'],
-    photo: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Kane_Williamson_in_2019.jpg',
     ranking: { test: 5, odi: 7, t20: 30 },
     stats: {
       test: { matches: 100, runs: 8743, avg: 54.64, sr: 51.20, hundreds: 32, fifties: 33, highest: 251, wickets: 30, economy: 2.95, bestBowling: '4/44' },
@@ -151,7 +151,7 @@ export const players = [
     age: 32, dob: '1991-06-04', birthPlace: 'Christchurch, NZ', height: "6'2\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Right-arm Fast-Medium', jerseyNumber: 55,
     team: 'England', formerTeams: ['Rajasthan Royals', 'Chennai Super Kings'],
-    photo: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/d/db/3_14_Captain_Ben_%28cropped%29_%28cropped%29.jpg',
     ranking: { test: 8, odi: 20, t20: 35 },
     stats: {
       test: { matches: 102, runs: 6320, avg: 35.89, sr: 58.92, hundreds: 13, fifties: 29, highest: 258, wickets: 210, avg: 31.50, economy: 3.34, bestBowling: '6/22' },
@@ -175,7 +175,7 @@ export const players = [
     age: 24, dob: '2000-04-06', birthPlace: 'KP, Pakistan', height: "6'6\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Left-arm Fast', jerseyNumber: 10,
     team: 'Pakistan', formerTeams: ['Lahore Qalandars', 'Lahore Qalandars'],
-    photo: 'https://images.unsplash.com/photo-1594394489098-7160a0a0a3c7?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Shaheen_Afridi_jogging_Sri_Lanka_vs_Pakistan_-_2nd_TEST_Match_-_SSC%2C_Colombo_%28cropped%29.jpg',
     ranking: { test: 4, odi: 6, t20: 2 },
     stats: {
       test: { matches: 28, runs: 250, avg: 10.87, sr: 56.68, hundreds: 0, fifties: 0, highest: 30, wickets: 114, avg: 23.55, economy: 2.92, bestBowling: '6/35' },
@@ -199,7 +199,7 @@ export const players = [
     age: 25, dob: '1998-09-20', birthPlace: 'Nangarhar, Afghanistan', height: "5'8\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Leg Break', jerseyNumber: 19,
     team: 'Afghanistan', formerTeams: ['Sunrisers Hyderabad', 'Gujarat Titans', 'Lahore Qalandars'],
-    photo: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/7/71/Rashid_Khan.jpg',
     ranking: { test: 50, odi: 3, t20: 1 },
     stats: {
       test: { matches: 6, runs: 82, avg: 10.25, sr: 62.59, hundreds: 0, fifties: 0, highest: 21, wickets: 34, avg: 18.94, economy: 2.85, bestBowling: '7/137' },
@@ -223,7 +223,7 @@ export const players = [
     age: 31, dob: '1992-12-17', birthPlace: 'Johannesburg, SA', height: "5'7\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 12,
     team: 'South Africa', formerTeams: ['Mumbai Indians', 'Lucknow Super Giants', 'Delhi Capitals'],
-    photo: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/6/67/QUINTON_DE_KOCK_%2815681398316%29.jpg',
     ranking: { test: 15, odi: 4, t20: 12 },
     stats: {
       test: { matches: 58, runs: 3657, avg: 38.90, sr: 69.38, hundreds: 6, fifties: 21, highest: 204, wickets: 0, economy: 0, bestBowling: '-' },
@@ -247,7 +247,7 @@ export const players = [
     age: 36, dob: '1987-04-30', birthPlace: 'Nagpur, India', height: "5'8\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 45,
     team: 'India', formerTeams: ['Mumbai Indians', 'Deccan Chargers'],
-    photo: 'https://images.unsplash.com/photo-1597466599360-3b9775841aec?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Prime_Minister_Of_Bharat_Shri_Narendra_Damodardas_Modi_with_Shri_Rohit_Gurunath_Sharma_%28Cropped%29.jpg',
     ranking: { test: 25, odi: 3, t20: 5 },
     stats: {
       test: { matches: 67, runs: 4137, avg: 40.56, sr: 59.22, hundreds: 11, fifties: 16, highest: 212, wickets: 2, economy: 5.60, bestBowling: '1/12' },
@@ -271,7 +271,7 @@ export const players = [
     age: 31, dob: '1993-05-08', birthPlace: 'Sydney, Australia', height: "6'3\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Fast', jerseyNumber: 30,
     team: 'Australia', formerTeams: ['Kolkata Knight Riders', 'Mumbai Indians'],
-    photo: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Pat_Cummins_fielding_Ashes_2021_%28cropped%29.jpg',
     ranking: { test: 3, odi: 10, t20: 15 },
     stats: {
       test: { matches: 55, runs: 940, avg: 15.67, sr: 46.85, hundreds: 0, fifties: 3, highest: 63, wickets: 259, avg: 21.37, economy: 2.85, bestBowling: '6/23' },
@@ -294,7 +294,7 @@ export const players = [
     age: 37, dob: '1987-03-08', birthPlace: 'Magura, Bangladesh', height: "5'11\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Left-arm Orthodox', jerseyNumber: 75,
     team: 'Bangladesh', formerTeams: ['Kolkata Knight Riders', 'Sunrisers Hyderabad', 'Dhaka Dominators'],
-    photo: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Shakib_Al_Hasan_%284%29_%28cropped%29.jpg',
     ranking: { test: 20, odi: 5, t20: 25 },
     stats: {
       test: { matches: 71, runs: 4394, avg: 38.53, sr: 56.65, hundreds: 5, fifties: 25, highest: 217, wickets: 233, avg: 31.48, economy: 3.12, bestBowling: '7/36' },
@@ -317,7 +317,7 @@ export const players = [
     age: 29, dob: '1995-05-25', birthPlace: 'Johannesburg, SA', height: "6'3\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Right-arm Fast', jerseyNumber: 25,
     team: 'South Africa', formerTeams: ['Delhi Capitals', 'Punjab Kings'],
-    photo: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Kingdom_Kome_co-founders_Kagiso_Rabada_and_Cameron_Scott_at_the_first_private_screening_of_The_Ring_of_Beasts_%28cropped%29.jpg',
     ranking: { test: 7, odi: 8, t20: 20 },
     stats: {
       test: { matches: 62, runs: 520, avg: 11.06, sr: 38.80, hundreds: 0, fifties: 0, highest: 22, wickets: 280, avg: 22.35, economy: 3.30, bestBowling: '7/112' },
@@ -340,7 +340,7 @@ export const players = [
     age: 33, dob: '1990-09-14', birthPlace: 'Mumbai, India', height: "5'11\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 63,
     team: 'India', formerTeams: ['Mumbai Indians', 'Kolkata Knight Riders'],
-    photo: 'https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Suryakumar_Yadav_in_PMO_New_Delhi.jpg',
     ranking: { test: 40, odi: 10, t20: 1 },
     stats: {
       test: { matches: 8, runs: 411, avg: 34.25, sr: 75.04, hundreds: 1, fifties: 2, highest: 111, wickets: 0, economy: 0, bestBowling: '-' },
@@ -363,7 +363,7 @@ export const players = [
     age: 30, dob: '1993-12-29', birthPlace: 'Adelaide, Australia', height: "6'1\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Right-arm Off Break', jerseyNumber: 62,
     team: 'Australia', formerTeams: ['Sunrisers Hyderabad', 'Delhi Capitals', 'Adelaide Strikers'],
-    photo: 'https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Travis_Head_bowling_at_Perth_Stadium%2C_First_Test_Australia_versus_West_Indies%2C_2_December_2022_03_%28cropped%29.jpg',
     ranking: { test: 10, odi: 12, t20: 40 },
     stats: {
       test: { matches: 45, runs: 3120, avg: 38.52, sr: 65.10, hundreds: 8, fifties: 13, highest: 175, wickets: 6, economy: 4.20, bestBowling: '1/3' },
@@ -385,7 +385,7 @@ export const players = [
     age: 29, dob: '1995-04-01', birthPlace: 'Barbados', height: "6'1\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Fast', jerseyNumber: 22,
     team: 'England', formerTeams: ['Mumbai Indians', 'Rajasthan Royals', 'Southern Brave'],
-    photo: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Jofra_Archer_%283%29.jpg',
     ranking: { test: 25, odi: 12, t20: 18 },
     stats: {
       test: { matches: 13, runs: 102, avg: 10.20, sr: 46.36, hundreds: 0, fifties: 0, highest: 18, wickets: 42, avg: 26.50, economy: 3.01, bestBowling: '6/45' },
@@ -408,7 +408,7 @@ export const players = [
     age: 30, dob: '1994-06-22', birthPlace: 'Johannesburg, SA', height: "5'11\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Right-arm Leg Break', jerseyNumber: 33,
     team: 'Australia', formerTeams: ['Queensland', 'Brisbane Heat'],
-    photo: 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/20251224_Marnus_Labuschagne_02.jpg',
     ranking: { test: 4, odi: 30, t20: 80 },
     stats: {
       test: { matches: 52, runs: 4520, avg: 54.46, sr: 52.38, hundreds: 13, fifties: 17, highest: 204, wickets: 12, economy: 3.45, bestBowling: '1/5' },
@@ -431,7 +431,7 @@ export const players = [
     age: 29, dob: '1994-12-14', birthPlace: 'Kanpur, India', height: "5'11\"",
     battingStyle: 'Left-hand Bat', bowlingStyle: 'Left-arm Wrist Spin', jerseyNumber: 67,
     team: 'India', formerTeams: ['Kolkata Knight Riders', 'Delhi Capitals'],
-    photo: 'https://images.unsplash.com/photo-1594394489098-7160a0a0a3c7?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Kuldeep_Yadav_in_PMO_New_Delhi.jpg',
     ranking: { test: 30, odi: 4, t20: 22 },
     stats: {
       test: { matches: 12, runs: 117, avg: 11.70, sr: 45.00, hundreds: 0, fifties: 0, highest: 40, wickets: 50, avg: 22.18, economy: 3.22, bestBowling: '5/40' },
@@ -453,7 +453,7 @@ export const players = [
     age: 34, dob: '1989-07-22', birthPlace: 'Rotorua, NZ', height: "6'3\"",
     battingStyle: 'Right-hand Bat', bowlingStyle: 'Left-arm Fast-Medium', jerseyNumber: 18,
     team: 'New Zealand', formerTeams: ['Mumbai Indians', 'Rajasthan Royals', 'Sunrisers Hyderabad'],
-    photo: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?w=400&h=400&fit=crop',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Trent_Boult.jpg',
     ranking: { test: 12, odi: 9, t20: 14 },
     stats: {
       test: { matches: 78, runs: 420, avg: 10.50, sr: 42.00, hundreds: 0, fifties: 0, highest: 21, wickets: 317, avg: 25.82, economy: 2.98, bestBowling: '7/34' },
