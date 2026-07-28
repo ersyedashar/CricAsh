@@ -1,10 +1,14 @@
 import { useLiveMatches, useUpcomingMatches, useRecentResults } from '../hooks/useData';
 import { MatchCard, SectionHeader, TabBar, Skeleton, EmptyState } from '../components/common';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 
 export default function MatchesPage() {
-  const [tab, setTab] = useState('live');
+  const location = useLocation();
+  const tabFromPath = location.pathname.split('/').pop();
+  const initialTab = ['live', 'upcoming', 'results'].includes(tabFromPath) ? tabFromPath : 'live';
+  const [tab, setTab] = useState(initialTab);
   const { data: live, isLoading: l1 } = useLiveMatches();
   const { data: upcoming, isLoading: l2 } = useUpcomingMatches();
   const { data: results, isLoading: l3 } = useRecentResults();

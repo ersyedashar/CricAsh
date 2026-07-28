@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { usePlayers } from '../hooks/useData';
 import { PlayerCard, SectionHeader, TabBar, EmptyState } from '../components/common';
 import { motion } from 'framer-motion';
@@ -8,7 +9,8 @@ const countries = ['All', 'India', 'Australia', 'England', 'Pakistan', 'South Af
 const roles = ['All', 'Batsman', 'Bowler', 'All-Rounder', 'Wicket-Keeper'];
 
 export default function PlayersPage() {
-  const [search, setSearch] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get('search') || '');
   const [country, setCountry] = useState('All');
   const [role, setRole] = useState('All');
 
@@ -33,7 +35,7 @@ export default function PlayersPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => { setSearch(e.target.value); setSearchParams(e.target.value ? { search: e.target.value } : {}); }}
                 placeholder="Search players by name..."
                 className="input-search"
               />

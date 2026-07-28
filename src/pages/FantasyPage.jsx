@@ -1,6 +1,6 @@
 import { SectionHeader, GlassCard, Badge } from '../components/common';
 import { motion } from 'framer-motion';
-import { Star, Users, TrendingUp, Cloud, Target, Zap, Shield, Award } from 'lucide-react';
+import { Star, Cloud, Target, Shield } from 'lucide-react';
 
 const dreamTeam = [
   { name: 'Rohit Sharma', role: 'Captain / Opener', country: 'India', points: 95 },

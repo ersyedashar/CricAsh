@@ -15,7 +15,6 @@ const navItems = [
     label: 'Players', path: '/players', icon: Users,
     children: [
       { label: 'All Players', path: '/players' },
-      { label: 'By Country', path: '/players/country' },
       { label: 'Top Rankings', path: '/rankings' },
     ],
   },
@@ -89,46 +88,51 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
-                <div
-                  key={item.path}
-                  className="relative"
-                  onMouseEnter={() => item.children && setActiveDropdown(item.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <Link
-                    to={item.children ? item.children[0].path : item.path}
-                    className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      location.pathname === item.path || (item.children && item.children.some(c => location.pathname === c.path))
-                        ? 'text-cricket-600 dark:text-cricket-400 bg-cricket-50 dark:bg-cricket-900/20'
-                        : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'
-                    }`}
+                  <div
+                    key={item.path}
+                    className="relative"
+                    onMouseEnter={() => item.children && setActiveDropdown(item.label)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                    onFocus={() => item.children && setActiveDropdown(item.label)}
+                    onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setActiveDropdown(null); }}
                   >
-                    <item.icon className="w-4 h-4" />
-                    {item.label}
-                    {item.children && <ChevronDown className="w-3 h-3" />}
-                  </Link>
-                  <AnimatePresence>
-                    {item.children && activeDropdown === item.label && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute top-full left-0 mt-1 w-48 py-2 bg-white dark:bg-navy-800 rounded-xl shadow-premium border border-gray-100 dark:border-navy-700"
-                      >
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.path}
-                            to={child.path}
-                            className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-cricket-600 dark:hover:text-cricket-400 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                    <Link
+                      to={item.children ? item.children[0].path : item.path}
+                      onKeyDown={(e) => { if (item.children && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); setActiveDropdown(activeDropdown === item.label ? null : item.label); } }}
+                      className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                        location.pathname === item.path || (item.children && item.children.some(c => location.pathname === c.path))
+                          ? 'text-cricket-600 dark:text-cricket-400 bg-cricket-50 dark:bg-cricket-900/20'
+                          : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'
+                      }`}
+                    >
+                      <item.icon className="w-4 h-4" />
+                      {item.label}
+                      {item.children && <ChevronDown className="w-3 h-3" />}
+                    </Link>
+                    <AnimatePresence>
+                      {item.children && activeDropdown === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute top-full left-0 mt-1 w-48 py-2 bg-white dark:bg-navy-800 rounded-xl shadow-premium border border-gray-100 dark:border-navy-700"
+                          role="menu"
+                        >
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.path}
+                              to={child.path}
+                              role="menuitem"
+                              className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-cricket-600 dark:hover:text-cricket-400 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
               ))}
             </nav>
 

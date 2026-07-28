@@ -88,7 +88,7 @@ export default function TeamDetailPage() {
               viewport={{ once: true }}
             >
               <Link to={`/players/${player.id}`} className="flex items-center gap-3 p-4 premium-card-hover">
-                <img src={player.photo} alt="" className="w-12 h-12 rounded-full object-cover" />
+                <img src={player.photo} alt={player.name} className="w-12 h-12 rounded-full object-cover" />
                 <div>
                   <p className="font-medium text-gray-900 dark:text-white text-sm">{player.name}</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">{player.role}</p>

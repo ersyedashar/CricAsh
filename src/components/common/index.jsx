@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { memo } from 'react';
 import { cn } from '../../utils/helpers';
 
 export function SectionHeader({ title, subtitle, link, linkText = 'View All', className }) {
@@ -103,7 +104,7 @@ export function TabBar({ tabs, active, onChange }) {
   );
 }
 
-export function PlayerCard({ player, index = 0 }) {
+export const PlayerCard = memo(function PlayerCard({ player, index = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -159,9 +160,9 @@ export function PlayerCard({ player, index = 0 }) {
       </Link>
     </motion.div>
   );
-}
+});
 
-export function MatchCard({ match, index = 0 }) {
+export const MatchCard = memo(function MatchCard({ match, index = 0 }) {
   const statusColor = match.isLive ? 'text-red-500' : match.status === 'Complete' ? 'text-cricket-500' : 'text-gray-500';
   return (
     <motion.div
@@ -217,9 +218,9 @@ export function MatchCard({ match, index = 0 }) {
       )}
     </motion.div>
   );
-}
+});
 
-export function TournamentCard({ tournament, index = 0 }) {
+export const TournamentCard = memo(function TournamentCard({ tournament, index = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -244,9 +245,9 @@ export function TournamentCard({ tournament, index = 0 }) {
       </Link>
     </motion.div>
   );
-}
+});
 
-export function CountryCard({ team, index = 0 }) {
+export const CountryCard = memo(function CountryCard({ team, index = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -268,9 +269,9 @@ export function CountryCard({ team, index = 0 }) {
       </Link>
     </motion.div>
   );
-}
+});
 
-export function RankingTable({ data, type = 'batting' }) {
+export const RankingTable = memo(function RankingTable({ data, type = 'batting' }) {
   return (
     <div className="overflow-x-auto">
       <table className="w-full">
@@ -296,7 +297,7 @@ export function RankingTable({ data, type = 'batting' }) {
                 </span>
               </td>
               <td className="py-3 px-4">
-                <Link to={`/players?search=${item.name}`} className="font-medium text-gray-900 dark:text-white hover:text-cricket-600 dark:hover:text-cricket-400 transition-colors">
+                <Link to={`/players?search=${encodeURIComponent(item.name)}`} className="font-medium text-gray-900 dark:text-white hover:text-cricket-600 dark:hover:text-cricket-400 transition-colors">
                   {item.name}
                 </Link>
               </td>
@@ -310,4 +311,4 @@ export function RankingTable({ data, type = 'batting' }) {
       </table>
     </div>
   );
-}
+});

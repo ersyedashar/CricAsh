@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { usePlayers } from '../hooks/useData';
 import { SectionHeader, GlassCard, Skeleton, Avatar } from '../components/common';
 import { motion } from 'framer-motion';
-import { Scale, Search, TrendingUp, Target, Zap, Award, Star } from 'lucide-react';
+import { Scale } from 'lucide-react';
 import { Bar, Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, RadialLinearScale, PointElement, Filler, Tooltip, Legend } from 'chart.js';
 
@@ -60,6 +60,9 @@ export default function ComparePage() {
       },
     ],
   } : null;
+
+  const chartOptions = { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' } }, x: { grid: { display: false } } } };
+  const radarOptions = { responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { r: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' }, angleLines: { color: 'rgba(148,163,184,0.1)' } } } };
 
   const barData = player1 && player2 ? {
     labels: ['Test Runs', 'ODI Runs', 'T20I Runs', 'IPL Runs'],
@@ -128,12 +131,12 @@ export default function ComparePage() {
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <GlassCard className="p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Runs Comparison</h3>
-                <Bar data={barData} options={{ responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' } }, x: { grid: { display: false } } } }} />
+                <Bar data={barData} options={chartOptions} />
               </GlassCard>
               <GlassCard className="p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Performance Radar</h3>
                 {radarData && (
-                  <Radar data={radarData} options={{ responsive: true, plugins: { legend: { position: 'bottom' } }, scales: { r: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' }, angleLines: { color: 'rgba(148,163,184,0.1)' } } } }} />
+                  <Radar data={radarData} options={radarOptions} />
                 )}
               </GlassCard>
             </div>

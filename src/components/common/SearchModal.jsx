@@ -99,7 +99,7 @@ export default function SearchModal() {
                         onClick={() => handleSelect(`/players/${player.id}`)}
                         className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-navy-700/50 transition-colors text-left"
                       >
-                        <img src={player.photo} alt="" className="w-10 h-10 rounded-full object-cover" />
+                        <img src={player.photo} alt={player.name} className="w-10 h-10 rounded-full object-cover" />
                         <div className="flex-1 min-w-0">
                           <p className="font-medium text-gray-900 dark:text-white truncate">{player.name}</p>
                           <p className="text-sm text-gray-500 dark:text-gray-400">{player.country} · {player.role}</p>

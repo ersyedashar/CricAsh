@@ -1,5 +1,4 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { useEffect } from 'react';
 import { cricketAPI, isAPIConfigured } from '../services/api';
 import { players } from '../data/players';
 import { teams } from '../data/teams';

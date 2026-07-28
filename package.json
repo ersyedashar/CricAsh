@@ -23,7 +23,6 @@
     "chart.js": "^4.4.1",
     "react-chartjs-2": "^5.2.0",
     "react-countup": "^6.5.0",
-    "@studio-freight/lenis": "^1.0.42",
     "clsx": "^2.1.0",
     "tailwind-merge": "^2.2.0"
   },

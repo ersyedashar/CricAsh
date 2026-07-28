@@ -1,6 +1,6 @@
 import { SectionHeader, GlassCard } from '../components/common';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Send, MessageSquare, Globe, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, Globe } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -9,7 +9,9 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!form.name || !form.email || !form.subject || !form.message) return;
     setSubmitted(true);
+    setForm({ name: '', email: '', subject: '', message: '' });
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -55,7 +57,7 @@ export default function ContactPage() {
                   </div>
                   <input placeholder="Subject" required className="input-search" value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} />
                   <textarea placeholder="Your Message" rows={5} required className="input-search resize-none" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
-                  <button type="submit" className="btn-primary flex items-center gap-2">
+                  <button type="submit" disabled={!form.name || !form.email || !form.subject || !form.message} className="btn-primary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                     <Send className="w-4 h-4" /> Send Message
                   </button>
                 </form>

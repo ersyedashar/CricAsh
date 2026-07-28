@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ExternalLink, Github, Twitter, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Twitter, Instagram, Youtube, Facebook } from 'lucide-react';
 
 const footerLinks = {
   'Cricket': [
@@ -43,14 +43,15 @@ export default function Footer() {
               <h3 className="text-xl font-display font-bold text-white">Stay Updated</h3>
               <p className="text-gray-400 mt-1">Get the latest cricket news and live score updates from CricAsh.</p>
             </div>
-            <div className="flex w-full md:w-auto gap-2">
+            <form onSubmit={(e) => { e.preventDefault(); alert('Newsletter subscription coming soon!'); }} className="flex w-full md:w-auto gap-2">
               <input
                 type="email"
                 placeholder="Enter your email"
+                required
                 className="flex-1 md:w-72 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cricket-500 transition-all"
               />
-              <button className="btn-primary whitespace-nowrap">Subscribe</button>
-            </div>
+              <button type="submit" className="btn-primary whitespace-nowrap">Subscribe</button>
+            </form>
           </div>
         </div>
       </div>
@@ -73,8 +74,8 @@ export default function Footer() {
             </p>
             <p className="text-gray-500 text-xs mb-3">Founded by <span className="text-cricket-400 font-medium">Syed Ashar</span></p>
             <div className="flex items-center gap-3">
-              {[Twitter, Instagram, Youtube, Facebook, Github].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-cricket-500/20 flex items-center justify-center text-gray-400 hover:text-cricket-400 transition-all">
+              {[{ Icon: Twitter, url: 'https://twitter.com/cricasth' }, { Icon: Instagram, url: 'https://instagram.com/cricasth' }, { Icon: Youtube, url: 'https://youtube.com/@cricasth' }, { Icon: Facebook, url: 'https://facebook.com/cricasth' }, { Icon: Github, url: 'https://github.com/cricasth' }].map(({ Icon, url }, i) => (
+                <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-white/5 hover:bg-cricket-500/20 flex items-center justify-center text-gray-400 hover:text-cricket-400 transition-all">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Zap, Trophy, TrendingUp, ArrowRight, Play, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Zap, ArrowRight } from 'lucide-react';
 import { Badge } from '../common';
 
 const heroSlides = [

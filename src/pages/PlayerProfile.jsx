@@ -79,6 +79,8 @@ export default function PlayerProfile() {
     }],
   };
 
+  const barOptions = { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' } }, x: { grid: { display: false } } } };
+
   const tabs = [
     { label: 'Overview', value: 'overview' },
     { label: 'Career Stats', value: 'stats' },
@@ -183,11 +185,11 @@ export default function PlayerProfile() {
             <div className="grid md:grid-cols-2 gap-6">
               <GlassCard className="p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Career Runs by Format</h3>
-                <Bar data={barData} options={{ responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' } }, x: { grid: { display: false } } } }} />
+                <Bar data={barData} options={barOptions} />
               </GlassCard>
               <GlassCard className="p-6">
                 <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Batting Average by Format</h3>
-                <Bar data={avgData} options={{ responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(148,163,184,0.1)' } }, x: { grid: { display: false } } } }} />
+                <Bar data={avgData} options={barOptions} />
               </GlassCard>
             </div>
 
@@ -316,7 +318,7 @@ export default function PlayerProfile() {
             <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Social Media</h3>
             <div className="space-y-3">
               {Object.entries(player.social).map(([platform, handle]) => (
-                <a key={platform} href="#" className="flex items-center justify-between p-3 bg-gray-50 dark:bg-navy-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-navy-700 transition-colors">
+                <a key={platform} href={`https://${platform}.com/${handle}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 bg-gray-50 dark:bg-navy-700/50 rounded-xl hover:bg-gray-100 dark:hover:bg-navy-700 transition-colors">
                   <span className="text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">{platform}</span>
                   <span className="text-sm text-cricket-600 dark:text-cricket-400 flex items-center gap-1">
                     {handle} <ExternalLink className="w-3 h-3" />

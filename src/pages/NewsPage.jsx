@@ -74,10 +74,10 @@ export default function NewsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-8"
               >
-                <Link to={`/news/${newsItems[0].id}`} className="block premium-card-hover overflow-hidden group">
+                <div className="block premium-card-hover overflow-hidden group">
                   <div className="grid md:grid-cols-2">
                     <div className="relative h-64 md:h-auto overflow-hidden">
-                      <img src={newsItems[0].image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={newsItems[0].image} alt={newsItems[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <Badge variant="live" className="absolute top-4 left-4">Featured</Badge>
                     </div>
                     <div className="p-6 md:p-8 flex flex-col justify-center">
@@ -92,7 +92,7 @@ export default function NewsPage() {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             )}
 
@@ -105,9 +105,9 @@ export default function NewsPage() {
                   transition={{ delay: i * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <Link to={`/news/${item.id}`} className="block premium-card-hover overflow-hidden group">
+                  <div className="block premium-card-hover overflow-hidden group">
                     <div className="relative h-48 overflow-hidden">
-                      <img src={item.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                       <Badge className="absolute top-3 left-3">{item.category}</Badge>
                     </div>
                     <div className="p-5">
@@ -120,7 +120,7 @@ export default function NewsPage() {
                         <span className="text-cricket-500 flex items-center gap-1">Read more <ArrowRight className="w-3 h-3" /></span>
                       </div>
                     </div>
-                  </Link>
+                  </div>
                 </motion.article>
               ))}
             </div>
