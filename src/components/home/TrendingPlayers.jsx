@@ -5,7 +5,7 @@ export default function TrendingPlayers() {
   const { data: players, isLoading } = usePlayers();
 
   return (
-    <section className="py-12 bg-white dark:bg-navy-900/50">
+    <section className="py-8 md:py-12 bg-white dark:bg-navy-900/50">
       <div className="container-premium">
         <SectionHeader
           title="Trending Players"

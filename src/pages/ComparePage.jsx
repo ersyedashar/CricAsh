@@ -80,8 +80,8 @@ export default function ComparePage() {
         {/* Player Selectors */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           {[{ id: p1Id, set: setP1Id, label: 'Player 1' }, { id: p2Id, set: setP2Id, label: 'Player 2' }].map(({ id, set, label }) => (
-            <GlassCard key={label} className="p-4">
-              <label className="text-xs font-semibold text-gray-400 uppercase mb-2 block">{label}</label>
+            <GlassCard key={label} className="p-3 md:p-4">
+              <label className="text-[10px] md:text-xs font-semibold text-gray-400 uppercase mb-1 md:mb-2 block">{label}</label>
               <select
                 value={id}
                 onChange={(e) => set(Number(e.target.value))}
@@ -98,26 +98,28 @@ export default function ComparePage() {
         {player1 && player2 && (
           <>
             {/* Player Headers */}
-            <div className="grid grid-cols-3 gap-4 mb-8 items-center">
+            <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6 md:mb-8 items-center">
               <div className="text-right">
-                <Avatar src={player1.photo} alt={player1.name} size="lg" className="ml-auto" />
-                <p className="font-semibold text-gray-900 dark:text-white mt-3">{player1.name}</p>
-                <p className="text-sm text-gray-500">{player1.country}</p>
+                <Avatar src={player1.photo} alt={player1.name} size="md" className="ml-auto md:hidden" />
+                <Avatar src={player1.photo} alt={player1.name} size="lg" className="ml-auto hidden md:block" />
+                <p className="font-semibold text-gray-900 dark:text-white mt-2 md:mt-3 text-sm md:text-base">{player1.name}</p>
+                <p className="text-[11px] md:text-sm text-gray-500">{player1.country}</p>
               </div>
               <div className="text-center">
-                <Scale className="w-8 h-8 mx-auto text-cricket-500" />
-                <p className="text-xs text-gray-400 mt-2">VS</p>
+                <Scale className="w-6 h-6 md:w-8 md:h-8 mx-auto text-cricket-500" />
+                <p className="text-[10px] md:text-xs text-gray-400 mt-1 md:mt-2">VS</p>
               </div>
               <div>
-                <Avatar src={player2.photo} alt={player2.name} size="lg" />
-                <p className="font-semibold text-gray-900 dark:text-white mt-3">{player2.name}</p>
-                <p className="text-sm text-gray-500">{player2.country}</p>
+                <Avatar src={player2.photo} alt={player2.name} size="md" className="md:hidden" />
+                <Avatar src={player2.photo} alt={player2.name} size="lg" className="hidden md:block" />
+                <p className="font-semibold text-gray-900 dark:text-white mt-2 md:mt-3 text-sm md:text-base">{player2.name}</p>
+                <p className="text-[11px] md:text-sm text-gray-500">{player2.country}</p>
               </div>
             </div>
 
             {/* Comparison Table */}
-            <GlassCard className="p-6 mb-8">
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-4">ODI Career Comparison</h3>
+            <GlassCard className="p-4 md:p-6 mb-8">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-3 md:mb-4 text-sm md:text-base">ODI Career Comparison</h3>
               {renderCompare('Matches', player1.stats.odi.matches, player2.stats.odi.matches)}
               {renderCompare('Runs', player1.stats.odi.runs.toLocaleString(), player2.stats.odi.runs.toLocaleString())}
               {renderCompare('Average', player1.stats.odi.avg, player2.stats.odi.avg)}
@@ -128,18 +130,18 @@ export default function ComparePage() {
             </GlassCard>
 
             {/* Charts */}
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <GlassCard className="p-6">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Runs Comparison</h3>
-                <Bar data={barData} options={chartOptions} />
-              </GlassCard>
-              <GlassCard className="p-6">
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Performance Radar</h3>
-                {radarData && (
-                  <Radar data={radarData} options={radarOptions} />
-                )}
-              </GlassCard>
-            </div>
+    <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
+      <GlassCard className="p-4 md:p-6">
+        <h3 className="font-semibold text-gray-900 dark:text-white mb-3 md:mb-4 text-sm md:text-base">Runs Comparison</h3>
+        <div className="min-h-[200px] md:min-h-0"><Bar data={barData} options={chartOptions} /></div>
+      </GlassCard>
+      <GlassCard className="p-4 md:p-6">
+        <h3 className="font-semibold text-gray-900 dark:text-white mb-3 md:mb-4 text-sm md:text-base">Performance Radar</h3>
+        {radarData && (
+          <div className="min-h-[200px] md:min-h-0"><Radar data={radarData} options={radarOptions} /></div>
+        )}
+      </GlassCard>
+    </div>
           </>
         )}
       </div>

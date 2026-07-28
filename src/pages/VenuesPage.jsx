@@ -34,7 +34,7 @@ export default function VenuesPage() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <div className="grid grid-cols-3 gap-3 mb-4">
+                  <div className="grid grid-cols-2 xs:grid-cols-3 gap-2 md:gap-3 mb-4">
                     <div className="text-center p-2 bg-gray-50 dark:bg-navy-700/50 rounded-lg">
                       <Users className="w-4 h-4 mx-auto text-cricket-500 mb-1" />
                       <p className="text-sm font-bold text-gray-900 dark:text-white">{venue.capacity.toLocaleString()}</p>

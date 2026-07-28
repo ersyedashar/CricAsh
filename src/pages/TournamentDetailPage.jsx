@@ -18,11 +18,11 @@ export default function TournamentDetailPage() {
           <Link to="/tournaments" className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> All Tournaments
           </Link>
-          <div className="flex items-center gap-6">
-            <span className="text-6xl">{tournament.logo}</span>
-            <div>
-              <h1 className="font-display text-4xl font-bold text-white">{tournament.name}</h1>
-              <div className="flex items-center gap-3 mt-3">
+          <div className="flex items-center gap-4 md:gap-6">
+            <span className="text-4xl md:text-6xl">{tournament.logo}</span>
+            <div className="min-w-0">
+              <h1 className="font-display text-2xl md:text-4xl font-bold text-white">{tournament.name}</h1>
+              <div className="flex flex-wrap items-center gap-2 md:gap-3 mt-2 md:mt-3">
                 <Badge>{tournament.format}</Badge>
                 <Badge variant="info">{tournament.frequency}</Badge>
                 <Badge variant="success">Champion: {tournament.currentChampion}</Badge>

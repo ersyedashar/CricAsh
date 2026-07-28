@@ -19,10 +19,10 @@ export default function RecordsSection() {
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-8 md:py-12">
       <div className="container-premium">
         <SectionHeader title="Cricket Records" subtitle="All-time cricket records and milestones" />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {sections.map((section, si) => (
             <motion.div
               key={section.key}

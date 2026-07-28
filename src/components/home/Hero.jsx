@@ -46,12 +46,12 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => setCurrent((p) => (p + 1) % heroSlides.length), 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [setCurrent]);
 
   const slide = heroSlides[current];
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
       {/* Background */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -69,14 +69,14 @@ export default function Hero() {
 
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-cricket-500/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full" />
+        <div className="absolute top-10 right-10 w-36 h-36 md:w-72 md:h-72 bg-cricket-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 md:w-96 md:h-96 bg-primary-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/5 rounded-full" />
       </div>
 
       {/* Content */}
-      <div className="container-premium relative z-10 pt-20">
+      <div className="container-premium relative z-10 pt-16 md:pt-20">
         <div className="max-w-2xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -86,18 +86,18 @@ export default function Hero() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge variant="live" className="mb-4">
-                <Zap className="w-3 h-3 mr-1" /> LIVE CRICKET
+              <Badge variant="live" className="mb-3 md:mb-4">
+                <Zap className="w-2.5 h-2.5 md:w-3 md:h-3 mr-1" /> LIVE CRICKET
               </Badge>
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight whitespace-pre-line mb-4">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight whitespace-pre-line mb-3 md:mb-4">
                 {slide.title}
               </h1>
-              <p className="text-lg text-white/70 mb-8 max-w-lg">{slide.subtitle}</p>
+              <p className="text-base md:text-lg text-white/70 mb-6 md:mb-8 max-w-lg">{slide.subtitle}</p>
               <div className="flex flex-wrap gap-3">
-                <Link to={slide.ctaLink} className="btn-primary text-lg px-8 py-4 flex items-center gap-2">
-                  {slide.cta} <ArrowRight className="w-5 h-5" />
+                <Link to={slide.ctaLink} className="btn-primary text-sm md:text-lg px-5 md:px-8 py-3 md:py-4 flex items-center gap-2">
+                  {slide.cta} <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                 </Link>
-                <Link to={slide.secondaryLink} className="btn-secondary text-lg px-8 py-4 text-white">
+                <Link to={slide.secondaryLink} className="btn-secondary text-sm md:text-lg px-5 md:px-8 py-3 md:py-4 text-white">
                   {slide.secondary}
                 </Link>
               </div>
@@ -106,20 +106,20 @@ export default function Hero() {
         </div>
 
         {/* Slide indicators */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3">
+        <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3">
           {heroSlides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === current ? 'w-8 bg-cricket-500' : 'w-3 bg-white/30 hover:bg-white/50'
+              className={`h-1 md:h-1.5 rounded-full transition-all duration-300 ${
+                i === current ? 'w-6 md:w-8 bg-cricket-500' : 'w-2 md:w-3 bg-white/30 hover:bg-white/50'
               }`}
             />
           ))}
         </div>
 
         {/* Navigation arrows */}
-        <div className="absolute bottom-10 right-8 hidden md:flex items-center gap-2">
+        <div className="absolute bottom-6 md:bottom-10 right-4 md:right-8 hidden md:flex items-center gap-2">
           <button
             onClick={() => setCurrent((p) => (p - 1 + heroSlides.length) % heroSlides.length)}
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors"

@@ -227,7 +227,7 @@ export default function Navbar() {
       </motion.header>
 
       {/* Spacer for fixed header */}
-      <div className="h-[3.5rem] md:h-16" />
+      <div className="h-14 md:h-16" />
 
       {/* Mobile Menu */}
       <AnimatePresence>

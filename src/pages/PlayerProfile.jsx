@@ -95,24 +95,24 @@ export default function PlayerProfile() {
         <img src={player.photo} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20 blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/80 to-transparent" />
         <div className="container-premium relative h-full flex items-end pb-8">
-          <div className="flex flex-col md:flex-row items-start md:items-end gap-6 w-full">
+          <div className="flex flex-col md:flex-row items-start md:items-end gap-4 md:gap-6 w-full">
             <motion.img
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               src={player.photo}
               alt={player.name}
-              className="w-32 h-32 md:w-40 md:h-40 rounded-2xl object-cover border-4 border-white/20 shadow-2xl"
+              className="w-24 h-24 md:w-40 md:h-40 rounded-2xl object-cover border-4 border-white/20 shadow-2xl"
             />
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
                 <Badge variant="format">{player.country}</Badge>
                 <Badge>{player.role}</Badge>
                 <Badge variant="success">#{player.ranking[activeFormat]}</Badge>
               </div>
-              <h1 className="font-display text-3xl md:text-4xl font-bold text-white mb-1">{player.name}</h1>
-              <p className="text-white/60 text-lg">&quot;{player.nickname}&quot;</p>
+              <h1 className="font-display text-2xl md:text-4xl font-bold text-white mb-1">{player.name}</h1>
+              <p className="text-white/60 text-sm md:text-lg">&quot;{player.nickname}&quot;</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 md:gap-2">
               <button
                 onClick={() => toggleFavorite(player.id)}
                 className={`p-3 rounded-xl transition-all ${fav ? 'bg-red-500 text-white' : 'bg-white/10 text-white hover:bg-white/20'}`}
@@ -132,18 +132,18 @@ export default function PlayerProfile() {
 
       <div className="container-premium py-8">
         {/* Personal Info */}
-        <div className="grid md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8">
           {[
             { label: 'Born', value: `${player.dob} (${player.age} years)`, icon: Calendar },
             { label: 'Birthplace', value: player.birthPlace, icon: MapPin },
             { label: 'Height', value: player.height, icon: Ruler },
             { label: 'Jersey', value: `#${player.jerseyNumber}`, icon: Shirt },
           ].map((item) => (
-            <GlassCard key={item.label} className="p-4 flex items-center gap-3">
-              <item.icon className="w-5 h-5 text-cricket-500 shrink-0" />
-              <div>
-                <p className="text-xs text-gray-400">{item.label}</p>
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{item.value}</p>
+            <GlassCard key={item.label} className="p-3 md:p-4 flex items-center gap-2 md:gap-3">
+              <item.icon className="w-4 h-4 md:w-5 md:h-5 text-cricket-500 shrink-0" />
+              <div className="min-w-0">
+                <p className="text-[10px] md:text-xs text-gray-400">{item.label}</p>
+                <p className="text-xs md:text-sm font-medium text-gray-900 dark:text-white truncate">{item.value}</p>
               </div>
             </GlassCard>
           ))}
@@ -171,12 +171,12 @@ export default function PlayerProfile() {
         {activeTab === 'overview' && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
             {/* Stats Grid */}
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
               {statCards.map((s) => (
-                <GlassCard key={s.label} className="p-4 text-center">
-                  <s.icon className="w-5 h-5 mx-auto mb-2 text-cricket-500" />
-                  <p className="text-2xl font-bold text-gray-900 dark:text-white">{s.value}</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{s.label}</p>
+                <GlassCard key={s.label} className="p-3 md:p-4 text-center">
+                  <s.icon className="w-4 h-4 md:w-5 md:h-5 mx-auto mb-1 md:mb-2 text-cricket-500" />
+                  <p className="text-lg md:text-2xl font-bold text-gray-900 dark:text-white">{s.value}</p>
+                  <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 mt-0.5 md:mt-1">{s.label}</p>
                 </GlassCard>
               ))}
             </div>

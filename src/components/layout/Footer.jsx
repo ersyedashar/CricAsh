@@ -58,7 +58,7 @@ export default function Footer() {
 
       {/* Links */}
       <div className="container-premium py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-4 lg:mb-0">
             <Link to="/" className="flex items-center gap-2 mb-4">
@@ -85,8 +85,8 @@ export default function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-white font-semibold text-sm mb-4 uppercase tracking-wider">{title}</h4>
-              <ul className="space-y-2.5">
+              <h4 className="text-white font-semibold text-xs md:text-sm mb-3 md:mb-4 uppercase tracking-wider">{title}</h4>
+              <ul className="space-y-2 md:space-y-2.5">
                 {links.map((link) => (
                   <li key={link.path}>
                     <Link to={link.path} className="text-sm text-gray-400 hover:text-cricket-400 transition-colors flex items-center gap-1">

@@ -16,9 +16,9 @@ export default function AboutPage() {
     <div className="py-8">
       <div className="container-premium max-w-4xl">
         <div className="text-center mb-12">
-          <h1 className="font-display text-4xl font-bold text-gray-900 dark:text-white mb-4">About CricAsh</h1>
-          <p className="text-sm text-cricket-500 dark:text-cricket-400 font-medium mb-2">Every Cricket Story, One Destination.</p>
-          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          <h1 className="font-display text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">About CricAsh</h1>
+          <p className="text-xs md:text-sm text-cricket-500 dark:text-cricket-400 font-medium mb-1 md:mb-2">Every Cricket Story, One Destination.</p>
+          <p className="text-sm md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
             Your premier destination for everything cricket. Live scores, player statistics, match analysis, and a comprehensive database of international cricketers.
           </p>
         </div>
@@ -46,12 +46,12 @@ export default function AboutPage() {
           </p>
         </GlassCard>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
           {features.map((item) => (
-            <GlassCard key={item.title} className="p-6 text-center">
-              <item.icon className="w-8 h-8 mx-auto text-cricket-500 mb-3" />
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{item.desc}</p>
+            <GlassCard key={item.title} className="p-4 md:p-6 text-center">
+              <item.icon className="w-6 h-6 md:w-8 md:h-8 mx-auto text-cricket-500 mb-2 md:mb-3" />
+              <h3 className="font-semibold text-gray-900 dark:text-white text-sm md:text-base mb-1 md:mb-2">{item.title}</h3>
+              <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{item.desc}</p>
             </GlassCard>
           ))}
         </div>

@@ -142,19 +142,19 @@ export const PlayerCard = memo(function PlayerCard({ player, index = 0 }) {
               {player.role}
             </span>
           </div>
-          <div className="grid grid-cols-3 gap-2 text-center">
-            <div className="bg-gray-50 dark:bg-navy-700/50 rounded-lg p-2">
-              <p className="text-xs text-gray-500 dark:text-gray-400">ODI Runs</p>
-              <p className="font-bold text-gray-900 dark:text-white">{player.stats.odi.runs.toLocaleString()}</p>
-            </div>
-            <div className="bg-gray-50 dark:bg-navy-700/50 rounded-lg p-2">
-              <p className="text-xs text-gray-500 dark:text-gray-400">Average</p>
-              <p className="font-bold text-gray-900 dark:text-white">{player.stats.odi.avg}</p>
-            </div>
-            <div className="bg-gray-50 dark:bg-navy-700/50 rounded-lg p-2">
-              <p className="text-xs text-gray-500 dark:text-gray-400">SR</p>
-              <p className="font-bold text-gray-900 dark:text-white">{player.stats.odi.sr}</p>
-            </div>
+          <div className="grid grid-cols-3 gap-1.5 md:gap-2 text-center">
+                  <div className="bg-gray-50 dark:bg-navy-700/50 rounded-lg p-1.5 md:p-2">
+                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400">ODI Runs</p>
+                    <p className="font-bold text-gray-900 dark:text-white text-xs md:text-base">{player.stats.odi.runs.toLocaleString()}</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-navy-700/50 rounded-lg p-1.5 md:p-2">
+                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400">Average</p>
+                    <p className="font-bold text-gray-900 dark:text-white text-xs md:text-base">{player.stats.odi.avg}</p>
+                  </div>
+                  <div className="bg-gray-50 dark:bg-navy-700/50 rounded-lg p-1.5 md:p-2">
+                    <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400">SR</p>
+                    <p className="font-bold text-gray-900 dark:text-white text-xs md:text-base">{player.stats.odi.sr}</p>
+                  </div>
           </div>
         </div>
       </Link>

@@ -8,7 +8,7 @@ export default function UpcomingAndResults() {
   const { data: results, isLoading: l2 } = useRecentResults();
 
   return (
-    <section className="py-12">
+    <section className="py-8 md:py-12">
       <div className="container-premium">
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Upcoming */}
@@ -35,13 +35,13 @@ export default function UpcomingAndResults() {
                     </div>
                     <div className="w-px h-10 bg-gray-200 dark:bg-navy-700" />
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg">{match.team1.flag}</span>
-                        <span className="font-semibold text-gray-900 dark:text-white">{match.team1.shortName}</span>
-                        <span className="text-gray-400">vs</span>
-                        <span className="font-semibold text-gray-900 dark:text-white">{match.team2.shortName}</span>
-                        <span className="text-lg">{match.team2.flag}</span>
-                      </div>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="text-base md:text-lg">{match.team1.flag}</span>
+                      <span className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">{match.team1.shortName}</span>
+                      <span className="text-gray-400 text-xs md:text-sm">vs</span>
+                      <span className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">{match.team2.shortName}</span>
+                      <span className="text-base md:text-lg">{match.team2.flag}</span>
+                    </div>
                       <p className="text-xs text-gray-400 mt-1 truncate">{match.venue} · {match.event}</p>
                     </div>
                   </motion.div>

@@ -20,49 +20,49 @@ export default function ContactPage() {
       <div className="container-premium">
         <SectionHeader title="Contact Us" subtitle="Get in touch with the CricAsh team" />
         <div className="grid lg:grid-cols-3 gap-8">
-          <div className="space-y-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-3 md:gap-6">
             {[
               { icon: Mail, label: 'Email', value: 'support@cricasth.com' },
               { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
               { icon: MapPin, label: 'Address', value: '123 Cricket Lane, Sports City, SC 12345' },
               { icon: Globe, label: 'Website', value: 'www.cricasth.com' },
             ].map(item => (
-              <GlassCard key={item.label} className="p-5 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-cricket-50 dark:bg-cricket-900/20 flex items-center justify-center shrink-0">
-                  <item.icon className="w-5 h-5 text-cricket-600 dark:text-cricket-400" />
+              <GlassCard key={item.label} className="p-3 md:p-5 flex items-start gap-3 md:gap-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-cricket-50 dark:bg-cricket-900/20 flex items-center justify-center shrink-0">
+                  <item.icon className="w-4 h-4 md:w-5 md:h-5 text-cricket-600 dark:text-cricket-400" />
                 </div>
-                <div>
-                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{item.label}</p>
-                  <p className="text-gray-900 dark:text-white">{item.value}</p>
+                <div className="min-w-0">
+                  <p className="text-[11px] md:text-sm font-medium text-gray-500 dark:text-gray-400">{item.label}</p>
+                  <p className="text-xs md:text-base text-gray-900 dark:text-white truncate">{item.value}</p>
                 </div>
               </GlassCard>
             ))}
           </div>
           <div className="lg:col-span-2">
-            <GlassCard className="p-6">
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+            <GlassCard className="p-4 md:p-6">
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-4 md:mb-6 flex items-center gap-2">
                 <MessageSquare className="w-5 h-5 text-cricket-500" /> Send us a message
               </h3>
               {submitted ? (
-                <div className="text-center py-12">
-                  <Send className="w-12 h-12 mx-auto text-cricket-500 mb-3" />
-                  <p className="text-lg font-semibold text-gray-900 dark:text-white">Message Sent!</p>
-                  <p className="text-gray-500">We'll get back to you within 24 hours.</p>
+                <div className="text-center py-8 md:py-12">
+                  <Send className="w-10 h-10 md:w-12 md:h-12 mx-auto text-cricket-500 mb-2 md:mb-3" />
+                  <p className="text-base md:text-lg font-semibold text-gray-900 dark:text-white">Message Sent!</p>
+                  <p className="text-sm md:text-base text-gray-500">We'll get back to you within 24 hours.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+                  <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                     <input placeholder="Your Name" required className="input-search" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
                     <input placeholder="Email Address" type="email" required className="input-search" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
                   </div>
                   <input placeholder="Subject" required className="input-search" value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })} />
-                  <textarea placeholder="Your Message" rows={5} required className="input-search resize-none" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
-                  <button type="submit" disabled={!form.name || !form.email || !form.subject || !form.message} className="btn-primary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                  <textarea placeholder="Your Message" rows={4} required className="input-search resize-none" value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
+                  <button type="submit" disabled={!form.name || !form.email || !form.subject || !form.message} className="btn-primary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto justify-center">
                     <Send className="w-4 h-4" /> Send Message
                   </button>
                 </form>
               )}
-              <p className="text-xs text-gray-400 mt-4 text-center">Created & Maintained by <span className="text-cricket-500 font-medium">Syed Ashar</span></p>
+              <p className="text-[10px] md:text-xs text-gray-400 mt-3 md:mt-4 text-center">Created & Maintained by <span className="text-cricket-500 font-medium">Syed Ashar</span></p>
             </GlassCard>
           </div>
         </div>

@@ -22,8 +22,8 @@ export default function FAQPage() {
       <div className="container-premium max-w-3xl">
         <div className="text-center mb-12">
           <HelpCircle className="w-12 h-12 mx-auto text-cricket-500 mb-4" />
-          <h1 className="font-display text-4xl font-bold text-gray-900 dark:text-white mb-3">Frequently Asked Questions</h1>
-          <p className="text-gray-500 dark:text-gray-400">Everything you need to know about CricAsh</p>
+          <h1 className="font-display text-2xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3">Frequently Asked Questions</h1>
+          <p className="text-sm md:text-base text-gray-500 dark:text-gray-400">Everything you need to know about CricAsh</p>
         </div>
         <div className="space-y-3">
           {faqs.map((faq, i) => (
@@ -32,7 +32,7 @@ export default function FAQPage() {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full p-5 flex items-center justify-between text-left"
               >
-                <span className="font-medium text-gray-900 dark:text-white pr-4">{faq.q}</span>
+                <span className="font-medium text-gray-900 dark:text-white pr-4 text-sm md:text-base text-left">{faq.q}</span>
                 <ChevronDown className={`w-5 h-5 text-gray-400 shrink-0 transition-transform duration-200 ${open === i ? 'rotate-180' : ''}`} />
               </button>
               <AnimatePresence>

@@ -19,11 +19,11 @@ export default function TeamDetailPage() {
           <Link to="/teams" className="inline-flex items-center gap-2 text-white/60 hover:text-white mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> All Teams
           </Link>
-          <div className="flex items-center gap-6">
-            <span className="text-7xl">{team.flag}</span>
-            <div>
-              <h1 className="font-display text-4xl font-bold text-white">{team.name}</h1>
-              <p className="text-white/60 mt-2">{team.description}</p>
+          <div className="flex items-center gap-4 md:gap-6">
+            <span className="text-5xl md:text-7xl">{team.flag}</span>
+            <div className="min-w-0">
+              <h1 className="font-display text-2xl md:text-4xl font-bold text-white">{team.name}</h1>
+              <p className="text-white/60 text-sm md:text-base mt-1 md:mt-2">{team.description}</p>
             </div>
           </div>
         </div>

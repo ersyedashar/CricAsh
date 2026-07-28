@@ -5,7 +5,7 @@ export default function LiveMatches() {
   const { data: matches, isLoading } = useLiveMatches();
 
   return (
-    <section className="py-12">
+    <section className="py-8 md:py-12">
       <div className="container-premium">
         <SectionHeader
           title="Live Matches"

@@ -106,7 +106,7 @@ export default function FantasyPage() {
                 <div key={i} className="p-4 bg-gray-50 dark:bg-navy-700/50 rounded-xl">
                   <p className="font-semibold text-gray-900 dark:text-white mb-1">{pitch.venue}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{pitch.advice}</p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     <Badge>{pitch.type}</Badge>
                     <Badge variant="info">Spin: {pitch.spin}</Badge>
                     <Badge variant="warning">Pace: {pitch.pace}</Badge>
@@ -123,17 +123,17 @@ export default function FantasyPage() {
             <Cloud className="w-6 h-6 text-primary-500" />
             <h3 className="font-semibold text-gray-900 dark:text-white">Weather Conditions</h3>
           </div>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {[
               { venue: 'Ahmedabad', temp: '32°C', condition: 'Sunny', humidity: '65%', wind: '12 km/h' },
               { venue: 'London', temp: '18°C', condition: 'Overcast', humidity: '72%', wind: '18 km/h' },
               { venue: 'Melbourne', temp: '24°C', condition: 'Clear', humidity: '55%', wind: '15 km/h' },
             ].map((w) => (
-              <div key={w.venue} className="p-4 bg-gray-50 dark:bg-navy-700/50 rounded-xl text-center">
-                <p className="font-semibold text-gray-900 dark:text-white">{w.venue}</p>
-                <p className="text-3xl font-bold text-cricket-600 dark:text-cricket-400 mt-2">{w.temp}</p>
-                <p className="text-sm text-gray-500 mt-1">{w.condition}</p>
-                <div className="flex justify-center gap-3 mt-2 text-xs text-gray-400">
+              <div key={w.venue} className="p-3 md:p-4 bg-gray-50 dark:bg-navy-700/50 rounded-xl text-center">
+                <p className="font-semibold text-gray-900 dark:text-white text-sm md:text-base">{w.venue}</p>
+                <p className="text-2xl md:text-3xl font-bold text-cricket-600 dark:text-cricket-400 mt-1 md:mt-2">{w.temp}</p>
+                <p className="text-xs md:text-sm text-gray-500 mt-0.5 md:mt-1">{w.condition}</p>
+                <div className="flex justify-center gap-2 md:gap-3 mt-1 md:mt-2 text-[10px] md:text-xs text-gray-400">
                   <span>💧 {w.humidity}</span>
                   <span>💨 {w.wind}</span>
                 </div>

@@ -10,20 +10,20 @@ export default function NotFoundPage() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <div className="relative mb-8">
-          <span className="font-display text-[12rem] md:text-[16rem] font-bold text-gray-100 dark:text-navy-800 leading-none select-none">
+        <div className="relative mb-6 md:mb-8">
+          <span className="font-display text-[6rem] sm:text-[10rem] md:text-[16rem] font-bold text-gray-100 dark:text-navy-800 leading-none select-none">
             404
           </span>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <span className="text-6xl mb-4 block">🏏</span>
-              <h1 className="font-display text-4xl font-bold text-gray-900 dark:text-white">
+              <span className="text-4xl sm:text-6xl mb-2 md:mb-4 block">🏏</span>
+              <h1 className="font-display text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white">
                 That&apos;s a <span className="text-cricket-500">Wicket!</span>
               </h1>
             </div>
           </div>
         </div>
-        <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-md mx-auto">
+        <p className="text-sm md:text-lg text-gray-500 dark:text-gray-400 mb-6 md:mb-8 max-w-md mx-auto px-4">
           The page you&apos;re looking for has been bowled out. It might have been moved or doesn&apos;t exist.
         </p>
         <div className="flex flex-wrap justify-center gap-3">

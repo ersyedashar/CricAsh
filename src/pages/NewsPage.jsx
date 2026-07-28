@@ -80,15 +80,15 @@ export default function NewsPage() {
                       <img src={newsItems[0].image} alt={newsItems[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <Badge variant="live" className="absolute top-4 left-4">Featured</Badge>
                     </div>
-                    <div className="p-6 md:p-8 flex flex-col justify-center">
-                      <Badge className="w-fit mb-3">{newsItems[0].category}</Badge>
-                      <h2 className="font-display text-2xl font-bold text-gray-900 dark:text-white group-hover:text-cricket-600 dark:group-hover:text-cricket-400 transition-colors mb-3">
+                    <div className="p-5 md:p-8 flex flex-col justify-center">
+                      <Badge className="w-fit mb-2 md:mb-3">{newsItems[0].category}</Badge>
+                      <h2 className="font-display text-xl md:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-cricket-600 dark:group-hover:text-cricket-400 transition-colors mb-2 md:mb-3">
                         {newsItems[0].title}
                       </h2>
-                      <p className="text-gray-500 dark:text-gray-400 line-clamp-3 mb-4">{newsItems[0].excerpt}</p>
-                      <div className="flex items-center gap-4 text-sm text-gray-400">
-                        <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {new Date(newsItems[0].date).toLocaleDateString()}</span>
-                        <span>By {newsItems[0].author}</span>
+                      <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 line-clamp-2 md:line-clamp-3 mb-3 md:mb-4">{newsItems[0].excerpt}</p>
+                      <div className="flex items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-400">
+                        <span className="flex items-center gap-1"><Clock className="w-3 h-3 md:w-4 md:h-4" /> {new Date(newsItems[0].date).toLocaleDateString()}</span>
+                        <span className="hidden xs:inline">By {newsItems[0].author}</span>
                       </div>
                     </div>
                   </div>
