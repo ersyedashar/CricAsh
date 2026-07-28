@@ -61,21 +61,12 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Founder Bar */}
-      <div className="fixed top-0 left-0 right-0 z-[60] h-7 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 border-b border-amber-500/20">
-        <div className="container-premium h-full flex items-center justify-center">
-          <span className="text-[10px] sm:text-xs tracking-[0.2em] text-amber-400/80 font-medium uppercase">
-            ✦ Founder: <span className="text-amber-300 font-semibold">Syed Ashar</span> ✦
-          </span>
-        </div>
-      </div>
-
       {/* Main Header */}
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className={`fixed top-7 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? 'bg-white/90 dark:bg-navy-900/95 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.4)] border-b border-gray-200/50 dark:border-white/5'
             : 'bg-white/70 dark:bg-navy-900/80 backdrop-blur-xl border-b border-transparent'
@@ -97,6 +88,9 @@ export default function Navbar() {
                 </span>
                 <span className="text-[9px] md:text-[10px] text-gray-400 dark:text-gray-500 tracking-[0.25em] uppercase font-medium -mt-0.5">
                   Cricket Hub
+                </span>
+                <span className="text-[8px] md:text-[9px] text-amber-500 dark:text-amber-400 tracking-[0.2em] uppercase font-semibold -mt-0.5">
+                  ✦ by Syed Ashar ✦
                 </span>
               </div>
             </Link>
